@@ -1,0 +1,17 @@
+# Node
+node_modules/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dev / Test
+test/
+validate_graph.js
+validate_graph.ps1
+server.py
+server.js
