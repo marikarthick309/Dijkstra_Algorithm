@@ -15,3 +15,8 @@ validate_graph.js
 validate_graph.ps1
 server.py
 server.js
+
+# Deploy
+deploy_netlify.py
+_deploy.zip
+*.zip
