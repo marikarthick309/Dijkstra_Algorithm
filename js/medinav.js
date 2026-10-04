@@ -151,6 +151,11 @@
       { from: 'G-RESTROOMS-ENT', to: 'G-RESTROOMS',       distance: 12.0 },
       // FIX #4: Cross-connection along north corridor SVG path "M 310 130 L 530 130"
       { from: 'G-CAFETERIA-ENT', to: 'G-RESTROOMS-ENT',   distance: 44.0 },
+      // FIX #7: North corridor cross-links to West & East stairs
+      { from: 'G-CORR-N1',       to: 'G-STAIR-WEST',      distance: 46.0 },
+      { from: 'G-CORR-N1',       to: 'G-STAIR-EAST',      distance: 46.0 },
+      { from: 'G-STAIR-WEST',    to: 'G-CAFETERIA-ENT',   distance: 24.0 },
+      { from: 'G-STAIR-EAST',    to: 'G-RESTROOMS-ENT',   distance: 24.0 },
 
       { from: 'G-CENTRAL-HUB',   to: 'G-CORR-W1',         distance: 24.0 },
       { from: 'G-CORR-W1',       to: 'G-PHARMACY-ENT',    distance:  8.0 },
@@ -301,11 +306,11 @@
           { id: 'G-STAIR-EAST',x: 625, y: 105, w: 50, h: 50, label: 'Stair E', type: 'stair' }
         ],
         corridors: [
-          'M 420 500 L 420 200',   // Central north–south spine
+          'M 420 500 L 420 130',   // Central north–south spine (extended to north concourse)
           'M 190 250 L 650 250',   // Central east–west spine
           'M 190 90 L 190 350',    // West concourse
           'M 650 90 L 650 350',    // East concourse
-          'M 310 130 L 530 130'    // North facilities link (Cafeteria ↔ Restrooms)
+          'M 190 130 L 650 130'    // North corridor (Stair W ↔ Cafeteria ↔ Restrooms ↔ Stair E)
         ],
         entrances: [
           { id: 'G-ENTRANCE',      x: 420, y: 520, label: 'Main Entrance' },
@@ -333,11 +338,11 @@
           { id: 'F1-STAIR-EAST',x: 625, y: 105, w: 50, h: 50, label: 'Stair E', type: 'stair' }
         ],
         corridors: [
-          'M 420 370 L 420 200',   // Central Level 1 spine (shorter – no entrance below)
+          'M 420 370 L 420 130',   // Central Level 1 spine (extended to north concourse)
           'M 190 250 L 650 250',   // Central east–west spine
           'M 190 90 L 190 350',    // West ward concourse
           'M 650 90 L 650 350',    // East ward concourse
-          'M 420 130 L 530 130'    // North doctors corridor
+          'M 190 130 L 650 130'    // North corridor (Stair W ↔ Doctors Lounge ↔ Stair E)
         ],
         entrances: []
       }

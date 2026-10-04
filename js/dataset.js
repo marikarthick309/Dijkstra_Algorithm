@@ -184,6 +184,12 @@ export const MASTER_DATASET = {
     { from: "G-CORR-N1", to: "G-CAFETERIA-ENT", distance: 22.0 },
     { from: "G-CAFETERIA-ENT", to: "G-CAFETERIA", distance: 12.0 },
     { from: "G-CORR-N1", to: "G-RESTROOMS-ENT", distance: 22.0 },
+    // Cross-connections along north corridor
+    { from: "G-CAFETERIA-ENT", to: "G-RESTROOMS-ENT", distance: 44.0 },
+    { from: "G-CORR-N1", to: "G-STAIR-WEST", distance: 46.0 },
+    { from: "G-CORR-N1", to: "G-STAIR-EAST", distance: 46.0 },
+    { from: "G-STAIR-WEST", to: "G-CAFETERIA-ENT", distance: 24.0 },
+    { from: "G-STAIR-EAST", to: "G-RESTROOMS-ENT", distance: 24.0 },
     { from: "G-RESTROOMS-ENT", to: "G-RESTROOMS", distance: 12.0 },
 
     // Central to West Wing
@@ -553,11 +559,11 @@ export const MASTER_DATASET = {
         { id: "G-STAIR-EAST", x: 625, y: 105, width: 50, height: 50, label: "Stair E", type: "stair" }
       ],
       corridors: [
-        { d: "M 420 500 L 420 200" }, // Central north-south spine
+        { d: "M 420 500 L 420 130" }, // Central north-south spine (extended to north concourse)
         { d: "M 190 250 L 650 250" }, // Central east-west spine
         { d: "M 190 90 L 190 350" },  // West concourse
         { d: "M 650 90 L 650 350" },  // East concourse
-        { d: "M 310 130 L 530 130" }  // North facilities link
+        { d: "M 190 130 L 650 130" }  // North corridor (Stair W ↔ Cafeteria ↔ Restrooms ↔ Stair E)
       ],
       entrances: [
         { id: "G-ENTRANCE", x: 420, y: 520, label: "Main Entrance", angle: 0 },
@@ -586,11 +592,11 @@ export const MASTER_DATASET = {
         { id: "F1-STAIR-EAST", x: 625, y: 105, width: 50, height: 50, label: "Stair E", type: "stair" }
       ],
       corridors: [
-        { d: "M 420 370 L 420 200" }, // Central Level 1 spine
+        { d: "M 420 370 L 420 130" }, // Central Level 1 spine (extended to north concourse)
         { d: "M 190 250 L 650 250" }, // Central east-west spine
         { d: "M 190 90 L 190 350" },  // West ward concourse
         { d: "M 650 90 L 650 350" },  // East ward concourse
-        { d: "M 420 130 L 530 130" }  // North doctors corridor
+        { d: "M 190 130 L 650 130" }  // North corridor (Stair W ↔ Doctors Lounge ↔ Stair E)
       ],
       entrances: []
     }
